@@ -1,0 +1,9 @@
+{
+	"name": "Metabot for Slack",
+	"description": "A slack command-line client in Slack.",
+	"respository": "https://github.com/dblock/slack-metabot",
+	"keywords": ["slack", "command-line", "client"],
+	"addons": [
+		"mongolab"
+	]
+}
