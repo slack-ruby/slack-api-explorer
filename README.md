@@ -25,7 +25,7 @@ See [DEPLOYMENT](DEPLOYMENT.md)
 
 ## Usage
 
-Get help with `@slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
+Get help with `slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
 
 ## Contributing
 
