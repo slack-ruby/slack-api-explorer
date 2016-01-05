@@ -42,7 +42,7 @@ $(document).ready(function() {
         code: code
       },
       success: function(data) {
-        SlackMetabot.message('Team successfully registered!<br>Create a #slakslak channel on Slack and invite @slak to it.');
+        SlackMetabot.message('Team successfully registered!<br><br>DM <b>@slak</b> or create a <b>#slakslak</b> channel and invite <b>@slak</b> to it.');
       },
       error: SlackMetabot.error
     });
