@@ -7,7 +7,6 @@ Or roll your own ...
 
 [![Build Status](https://travis-ci.org/dblock/slack-metabot.svg)](https://travis-ci.org/dblock/slack-metabot)
 [![Code Climate](https://codeclimate.com/github/dblock/slack-metabot/badges/gpa.svg)](https://codeclimate.com/github/dblock/slack-metabot)
-[![Dependency Status](https://gemnasium.com/dblock/slack-metabot.svg)](https://gemnasium.com/dblock/slack-metabot)
 
 A command-line meta bot for Slack.
 
@@ -16,7 +15,7 @@ A command-line meta bot for Slack.
 Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot). Note the API token.
 You will be able to invoke metabot by the name you give it in the UI above.
 
-Run `SLACK_API_TOKEN=<your API token> GAMEBOT_SECRET=secret foreman start`
+Run `SLACK_API_TOKEN=<your API token> foreman start`
 
 ## Production Deployment
 
@@ -24,8 +23,11 @@ See [DEPLOYMENT](DEPLOYMENT.md)
 
 ## Usage
 
-Get help with `@slackslack help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
+Get help with `@slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
 
+```
+
+```
 
 
 ## Contributing

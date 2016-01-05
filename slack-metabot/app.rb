@@ -1,7 +1,6 @@
 module SlackMetabot
   class App
     def prepare!
-      check_slack_client!
       silence_loggers!
       check_mongodb_provider!
       check_database!
@@ -52,11 +51,6 @@ module SlackMetabot
       team = Team.find_or_create_from_env!
       logger.info "Automatically migrated team: #{team}."
       logger.warn "You should unset ENV['SLACK_API_TOKEN']."
-    end
-
-    def check_slack_client!
-      return if ENV.key?('SLACK_CLIENT_ID') && ENV.key?('SLACK_CLIENT_SECRET')
-      fail 'Missing SLACK_CLIENT_ID or SLACK_CLIENT_SECRET.'
     end
 
     def purge_inactive_teams!
