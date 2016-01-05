@@ -10,6 +10,8 @@ Or roll your own ...
 
 A command-line meta bot for Slack.
 
+![](public/img/slak.gif)
+
 ## Installation
 
 Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot). Note the API token.
