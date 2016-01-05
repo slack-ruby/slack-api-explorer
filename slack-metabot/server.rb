@@ -16,6 +16,7 @@ module SlackMetabot
       EM.next_tick do
         logger.info "#{team.name}: socket closed, restarting ..."
         SlackMetabot::Service.restart! team, self, wait
+        client.team = team
       end
     end
   end

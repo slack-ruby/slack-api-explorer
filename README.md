@@ -9,7 +9,7 @@ Or roll your own ...
 [![Code Climate](https://codeclimate.com/github/dblock/slack-metabot/badges/gpa.svg)](https://codeclimate.com/github/dblock/slack-metabot)
 [![Dependency Status](https://gemnasium.com/dblock/slack-metabot.svg)](https://gemnasium.com/dblock/slack-metabot)
 
-A generic meta bot for slack.
+A command-line meta bot for Slack.
 
 ## Installation
 
@@ -24,7 +24,9 @@ See [DEPLOYMENT](DEPLOYMENT.md)
 
 ## Usage
 
-TODO
+Get help with `@slackslack help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
+
+
 
 ## Contributing
 

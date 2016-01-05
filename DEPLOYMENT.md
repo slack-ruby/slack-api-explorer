@@ -14,11 +14,15 @@ Deploy slack-metabot to Heroku and add a MongoLab or Compose MongoDB provider. Y
 
 #### SLACK_API_TOKEN
 
-If your bot servces one team, create a new bot integration on Slack and set `SLACK_API_TOKEN` from the bot integration settings on Slack. The first time you start the service it will automatically create a team using this token.
+If your bot services one team, create a new bot integration on Slack and set `SLACK_API_TOKEN` from the bot integration settings on Slack. The first time you start the service it will automatically create a team using this token.
 
 ```
 heroku config:add SLACK_API_TOKEN=...
 ```
+
+#### SLACK_CLIENT_ID and SLACK_CLIENT_SECRET
+
+If your bot services mutliple teams, create a new bot app and set `SLACK_CLIENT_ID` and `SLACK_CLIENT_SECRET`.
 
 #### Database Backups
 

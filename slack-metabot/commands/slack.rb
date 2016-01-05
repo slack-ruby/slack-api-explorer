@@ -6,11 +6,15 @@ module SlackMetabot
       match(/^(?<bot>\w*)\s+(?<expression>.+)/)
 
       def self.call(client, data, match)
+        expression = match['expression']
+        expression.gsub! '—', '--'
+        logger.info "SLACK: #{client.team} - #{expression}"
+
         _stdin, stdout, stderr, _wait_thr = Open3.popen3(* [
           'slack',
           '--slack-api-token',
           client.team.token,
-          match['expression'].split(' ')
+          Shellwords.shellwords(expression)
         ].flatten)
 
         output = stdout.gets(nil).try(:strip)
