@@ -7,11 +7,12 @@ I am your friendly Metabot, here to help.
 ```
 General
 -------
-hi: be nice, say hi to your bot
-team: show your team's info and captains
-help: get this helpful message
 
-TODO
+help       - get this helpful message
+
+Commands
+--------
+#{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
 ```
         EOS
       def self.call(client, data, _match)
