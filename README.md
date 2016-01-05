@@ -27,11 +27,6 @@ See [DEPLOYMENT](DEPLOYMENT.md)
 
 Get help with `@slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
 
-```
-
-```
-
-
 ## Contributing
 
 This bot is built with [slack-ruby-bot](https://github.com/dblock/slack-ruby-bot). See [CONTRIBUTING](CONTRIBUTING.md).
