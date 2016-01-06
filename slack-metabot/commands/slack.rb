@@ -9,21 +9,22 @@ module SlackMetabot
         expression = match['expression']
         expression.gsub! '—', '--'
         logger.info "SLACK: #{client.team} - #{expression}"
+        args = Shellwords.shellwords(expression)
+        execute(client, args) do |output|
+          send_message client, data.channel, "```\n#{output}```"
+        end
+      end
 
-        _stdin, stdout, stderr, _wait_thr = Open3.popen3(* [
+      def self.execute(client, args)
+        Open3.popen3(* [
           'slack',
           '--slack-api-token',
           client.team.token,
-          Shellwords.shellwords(expression)
-        ].flatten)
-
-        output = stdout.gets(nil).try(:strip)
-        err = stderr.gets(nil).try(:strip)
-
-        send_message client, data.channel, "```\n#{err || output}```"
-      ensure
-        stderr.close if stderr
-        stdout.close if stdout
+          args
+        ].flatten) do |_, stdout, stderr, _|
+          output = stderr.gets || stdout.gets
+          yield output.strip
+        end
       end
     end
   end
