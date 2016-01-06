@@ -10,11 +10,72 @@ Or roll your own ...
 
 A command-line meta bot for Slack.
 
+You can DM the bot.
+
+![](public/img/dm.gif)
+
+Or invite it to a channel.
+
 ![](public/img/slak.gif)
 
 ## Usage
 
-Get help with `slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
+### Help
+
+Get help with `slak help`.
+
+### Basics
+
+All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported. The output is JSON.
+
+```
+auth test
+
+{
+  "ok": true,
+  "url": "https://dblockdotorg.slack.com/",
+  "team": "dblock",
+  "user": "slak",
+  "team_id": "T04KB5WQH",
+  "user_id": "U0HPMN0GY"
+}
+```
+
+### Parsing
+
+You can pipe a JSON parser. See [jsonpath](https://github.com/joshbuddy/jsonpath) for detailed syntax.
+
+Your team ID.
+
+```
+auth test | $.team_id
+
+[
+  "T04KB5WQH"
+]
+```
+
+Names of all unarchived channels.
+
+```
+channels list | $..[?(@.is_archived==false)].name
+
+[
+  "demo",
+  "general",
+  "slakslak",
+]
+```
+
+Find out the ID of the _#general_ channel.
+
+```
+channels list | $..[?(@.name=="general")].id
+
+[
+  "C04KB5X4D"
+]
+```
 
 ## Installation
 
