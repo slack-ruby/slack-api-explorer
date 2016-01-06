@@ -117,6 +117,8 @@ GEM
     i18n (0.7.0)
     ice_nine (0.11.1)
     json (1.8.3)
+    jsonpath (0.5.8)
+      multi_json
     kaminari (0.16.3)
       actionpack (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -262,6 +264,7 @@ DEPENDENCIES
   grape-swagger
   heroku
   hyperclient
+  jsonpath
   kaminari (~> 0.16.1)
   mongoid (~> 5.0.0)
   mongoid-scroll

@@ -12,6 +12,10 @@ A command-line meta bot for Slack.
 
 ![](public/img/slak.gif)
 
+## Usage
+
+Get help with `slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
+
 ## Installation
 
 Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot). Note the API token.
@@ -22,10 +26,6 @@ Run `SLACK_API_TOKEN=<your API token> foreman start`
 ## Production Deployment
 
 See [DEPLOYMENT](DEPLOYMENT.md)
-
-## Usage
-
-Get help with `slak help`. All the commands of [slack-ruby-client](https://github.com/dblock/slack-ruby-client#command-line-client) are supported.
 
 ## Contributing
 
