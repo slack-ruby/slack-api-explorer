@@ -12,15 +12,15 @@ module SlackMetabot
         args, pipe = Shellwords.parse(expression)
         execute(client, args) do |output, error|
           if error
-            send_message client, data.channel, "```\n#{error}```"
+            client.say(channel: data.channel, text: "```\n#{error}```")
           else
             output = pipe ? JsonPath.on(output, pipe) : JSON.parse(output)
             output = JSON.pretty_generate(output)
-            send_message client, data.channel, "```\n#{output}```"
+            client.say(channel: data.channel, text: "```\n#{output}```")
           end
         end
       rescue SyntaxError => e
-        send_message_with_gif client, data.channel, e.message, 'error'
+        client.say(channel: data.channel, text: e.message, gif: 'error')
       end
 
       def self.execute(client, args)

@@ -16,8 +16,8 @@ Commands
 ```
         EOS
       def self.call(client, data, _match)
-        send_message client, data.channel, [HELP, SlackMetabot::INFO].join("\n")
-        send_gif client, data.channel, 'help'
+        client.say(channel: data.channel, text: [HELP, SlackMetabot::INFO].join("\n"))
+        client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.team} - #{data.user}"
       end
     end

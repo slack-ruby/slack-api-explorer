@@ -4,8 +4,8 @@ module SlackMetabot
       match(/^(?<bot>\w*)$/)
 
       def self.call(client, data, _match)
-        send_message client, data.channel, SlackMetabot::INFO
-        send_gif client, data.channel, 'robot'
+        client.say(channel: data.channel, text: SlackMetabot::INFO)
+        client.say(channel: data.channel, gif: 'robot')
       end
     end
   end
