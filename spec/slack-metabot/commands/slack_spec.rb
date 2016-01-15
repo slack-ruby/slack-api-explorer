@@ -26,6 +26,9 @@ describe SlackMetabot::Commands::Slack do
     it 'processes a json value' do
       expect(message: "#{SlackRubyBot.config.user} auth test | $.team_id").to respond_with_slack_message("```\n[\n  \"T04KB5WQH\"\n]```")
     end
+    it 'responds to a slack ID' do
+      expect(message: "<@#{SlackRubyBot.config.user_id}>: auth test").to respond_with_slack_message("```\n#{JSON.pretty_generate(json)}```")
+    end
   end
   context 'channels list' do
     let(:json) do

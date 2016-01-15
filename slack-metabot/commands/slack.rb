@@ -3,7 +3,7 @@ require 'open3'
 module SlackMetabot
   module Commands
     class Slack < SlackRubyBot::Commands::Base
-      match(/^(?<bot>\w*)\s+(?<expression>.+)/)
+      match(/^(?<bot>[[:alnum:][:punct:]@<>]*)\s+(?<expression>.+)/)
 
       def self.call(client, data, match)
         expression = match['expression']
