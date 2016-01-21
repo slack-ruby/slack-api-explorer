@@ -1,11 +1,11 @@
 module SlackApiExplorer
   INFO = <<-EOS
-ApiExplorer #{SlackApiExplorer::VERSION}
+Api Explorer #{SlackApiExplorer::VERSION}
 
 © Daniel Doubrovkine & Contributors, MIT License
 https://twitter.com/dblockdotorg
 
-Free Service at http://slack-api-explorer.dblock.org
+Free Service at http://slack-api-explorer.playplay.io
 Open-Source at https://github.com/dblock/slack-api-explorer
   EOS
 end
