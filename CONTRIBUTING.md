@@ -1,19 +1,19 @@
-# Contributing to SlackMetabot
+# Contributing to SlackApiExplorer
 
-This project is work of [many contributors](https://github.com/dblock/slack-metabot/graphs/contributors).
+This project is work of [many contributors](https://github.com/dblock/slack-api-explorer/graphs/contributors).
 
-You're encouraged to submit [pull requests](https://github.com/dblock/slack-metabot/pulls), [propose features and discuss issues](https://github.com/dblock/slack-metabot/issues).
+You're encouraged to submit [pull requests](https://github.com/dblock/slack-api-explorer/pulls), [propose features and discuss issues](https://github.com/dblock/slack-api-explorer/issues).
 
 In the examples below, substitute your Github username for `contributor` in URLs.
 
 ## Fork the Project
 
-Fork the [project on Github](https://github.com/dblock/slack-metabot) and check out your copy.
+Fork the [project on Github](https://github.com/dblock/slack-api-explorer) and check out your copy.
 
 ```
-git clone https://github.com/contributor/slack-metabot.git
-cd slack-metabot
-git remote add upstream https://github.com/dblock/slack-metabot.git
+git clone https://github.com/contributor/slack-api-explorer.git
+cd slack-api-explorer
+git remote add upstream https://github.com/dblock/slack-api-explorer.git
 ```
 
 ## Create a Topic Branch
@@ -84,7 +84,7 @@ git push origin my-feature-branch
 
 ## Make a Pull Request
 
-Go to https://github.com/contributor/slack-metabot and select your feature branch.
+Go to https://github.com/contributor/slack-api-explorer and select your feature branch.
 Click the 'Pull Request' button and fill out the form. Pull requests are usually reviewed within a few days.
 
 ## Rebase
@@ -102,7 +102,7 @@ git push origin my-feature-branch -f
 Update the [CHANGELOG](CHANGELOG.md) with the pull request number. A typical entry looks as follows.
 
 ```
-* [#123](https://github.com/dblock/slack-metabot/pull/123): Reticulated splines - [@contributor](https://github.com/contributor).
+* [#123](https://github.com/dblock/slack-api-explorer/pull/123): Reticulated splines - [@contributor](https://github.com/contributor).
 ```
 
 Amend your previous commit and force push the changes.

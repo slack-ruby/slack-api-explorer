@@ -1,14 +1,14 @@
-var SlackMetabot = {};
+var SlackApiExplorer = {};
 
 $(document).ready(function() {
 
-  SlackMetabot.message = function(text) {
+  SlackApiExplorer.message = function(text) {
     $('#messages').fadeOut('slow', function() {
       $('#messages').fadeIn('slow').html(text)
     });
   };
 
-  SlackMetabot.error = function(xhr) {
+  SlackApiExplorer.error = function(xhr) {
     try {
       var message;
       if (xhr.responseText) {
@@ -23,17 +23,17 @@ $(document).ready(function() {
         }
       }
 
-      SlackMetabot.message(message || xhr.statusText || xhr.responseText || 'Unexpected Error');
+      SlackApiExplorer.message(message || xhr.statusText || xhr.responseText || 'Unexpected Error');
 
     } catch(err) {
-      SlackMetabot.message(err.message);
+      SlackApiExplorer.message(err.message);
     }
   };
 
   // Slack OAuth
   var code = $.url('?code')
   if (code) {
-    SlackMetabot.message('Working, please wait ...');
+    SlackApiExplorer.message('Working, please wait ...');
     $('#register').hide();
     $.ajax({
       type: "POST",
@@ -42,9 +42,9 @@ $(document).ready(function() {
         code: code
       },
       success: function(data) {
-        SlackMetabot.message('Team successfully registered!<br><br>DM <b>@slak</b> or create a <b>#slakslak</b> channel and invite <b>@slak</b> to it.');
+        SlackApiExplorer.message('Team successfully registered!<br><br>DM <b>@api</b> or create a <b>#channel</b> and invite <b>@api</b> to it.');
       },
-      error: SlackMetabot.error
+      error: SlackApiExplorer.error
     });
   }
 });

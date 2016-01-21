@@ -23,7 +23,7 @@ module Api
         end
         sort Team::SORT_ORDERS
         get do
-          teams = Team.all
+          teams = Team.where(api: true)
           teams = teams.active if params[:active]
           teams = paginate_and_sort_by_cursor(teams, default_sort_order: '-_id')
           present teams, with: Api::Presenters::TeamsPresenter
@@ -57,7 +57,7 @@ module Api
             )
           end
 
-          SlackMetabot::Service.start!(team)
+          SlackApiExplorer::Service.start!(team)
           present team, with: Api::Presenters::TeamPresenter
         end
       end

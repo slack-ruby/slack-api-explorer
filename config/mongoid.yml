@@ -1,7 +1,7 @@
 development:
   clients:
     default:
-      database: metabot_development
+      database: slack_api_explorer_development
       hosts:
         - 127.0.0.1:27017
   options:
@@ -11,7 +11,7 @@ development:
 test:
   clients:
     default:
-      database: metabot_test
+      database: slack_api_explorer_test
       hosts:
         - 127.0.0.1:27017
   options:

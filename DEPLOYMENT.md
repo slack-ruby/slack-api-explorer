@@ -1,14 +1,14 @@
-### Slack-Metabot
+### Slack API Explorer
 
-[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](http://slack-metabot.dblock.org)
+[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](http://api-explorer.playplay.io)
 
-## Deploy Your Own Slack-Metabot
+## Deploy Your Own Slack API Explorer
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/dblock/slack-metabot)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/dblock/slack-api-explorer)
 
 ### MongoDB
 
-Deploy slack-metabot to Heroku and add a MongoLab or Compose MongoDB provider. You can use both free and paid tiers.
+Deploy slack-api-explorer to Heroku and add a MongoLab or Compose MongoDB provider. You can use both free and paid tiers.
 
 ### Environment
 

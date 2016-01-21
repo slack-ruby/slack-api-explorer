@@ -7,7 +7,7 @@ namespace :db do
   end
 
   namespace :heroku do
-    desc 'Mongodump the Metabot database for a slack-metabot Heroku app.'
+    desc 'Mongodump the bot database for a slack-api-explorer Heroku app.'
     task :backup, [:app] do |_t, args|
       require 'mongoid-shell'
 

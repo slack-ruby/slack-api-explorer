@@ -1,8 +1,8 @@
-module SlackMetabot
+module SlackApiExplorer
   module Commands
     class Help < SlackRubyBot::Commands::Base
       HELP = <<-EOS
-I am your friendly Metabot, here to help.
+I am your friendly Api Explorer, here to help.
 
 ```
 General
@@ -16,7 +16,7 @@ Commands
 ```
         EOS
       def self.call(client, data, _match)
-        client.say(channel: data.channel, text: [HELP, SlackMetabot::INFO].join("\n"))
+        client.say(channel: data.channel, text: [HELP, SlackApiExplorer::INFO].join("\n"))
         client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.team} - #{data.user}"
       end

@@ -1,4 +1,4 @@
-module SlackMetabot
+module SlackApiExplorer
   class App
     def prepare!
       silence_loggers!
@@ -7,10 +7,11 @@ module SlackMetabot
       create_indexes!
       migrate_from_single_team!
       purge_inactive_teams!
+      default_team_api_off!
     end
 
     def self.instance
-      @instance ||= SlackMetabot::App.new
+      @instance ||= SlackApiExplorer::App.new
     end
 
     private
@@ -55,6 +56,10 @@ module SlackMetabot
 
     def purge_inactive_teams!
       Team.purge!
+    end
+
+    def default_team_api_off!
+      Team.where(api: nil).update_all(api: false)
     end
   end
 end

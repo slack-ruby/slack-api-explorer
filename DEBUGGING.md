@@ -2,7 +2,7 @@
 
 ### Locally
 
-You can debug your instance of slack-metabot with a built-in `script/console`.
+You can debug your instance of slack-api-explorer with a built-in `script/console`.
 
 ### Silence Mongoid Logger
 

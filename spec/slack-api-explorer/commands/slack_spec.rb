@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe SlackMetabot::Commands::Slack do
+describe SlackApiExplorer::Commands::Slack do
   let!(:team) { Fabricate(:team) }
-  let(:app) { SlackMetabot::Server.new(team: team) }
+  let(:app) { SlackApiExplorer::Server.new(team: team) }
   it 'auth' do
     expect(message: "#{SlackRubyBot.config.user} auth").to respond_with_slack_message("```\nerror: Command 'auth' requires a subcommand test```")
   end
@@ -18,7 +18,7 @@ describe SlackMetabot::Commands::Slack do
       }
     end
     before do
-      allow(SlackMetabot::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(SlackApiExplorer::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
     end
     it 'returns raw json' do
       expect(message: "#{SlackRubyBot.config.user} auth test").to respond_with_slack_message("```\n#{JSON.pretty_generate(json)}```")
@@ -63,7 +63,7 @@ describe SlackMetabot::Commands::Slack do
       }
     end
     before do
-      allow(SlackMetabot::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(SlackApiExplorer::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
     end
     it 'returns multiple json values' do
       expect(message: "#{SlackRubyBot.config.user} channels list | $..name").to respond_with_slack_message("```\n[\n  \"general\",\n  \"random\"\n]```")

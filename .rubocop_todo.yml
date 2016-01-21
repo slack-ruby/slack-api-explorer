@@ -10,7 +10,7 @@
 Lint/RescueException:
   Exclude:
     - 'config.ru'
-    - 'slack-metabot/app.rb'
+    - 'slack-api-explorer/app.rb'
 
 # Offense count: 5
 Metrics/AbcSize:
@@ -43,4 +43,4 @@ Style/Documentation:
 # Configuration parameters: Exclude.
 Style/FileName:
   Exclude:
-    - 'slack-metabot.rb'
+    - 'slack-api-explorer.rb'

@@ -1,4 +1,4 @@
-module SlackMetabot
+module SlackApiExplorer
   class Service
     LOCK = Mutex.new
     @services = {}
@@ -8,7 +8,7 @@ module SlackMetabot
         fail 'Token already known.' if @services.key?(team.token)
         EM.next_tick do
           logger.info "Starting team #{team}."
-          server = SlackMetabot::Server.new(team: team)
+          server = SlackApiExplorer::Server.new(team: team)
           LOCK.synchronize do
             @services[team.token] = server
           end

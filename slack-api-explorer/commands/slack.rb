@@ -1,6 +1,6 @@
 require 'open3'
 
-module SlackMetabot
+module SlackApiExplorer
   module Commands
     class Slack < SlackRubyBot::Commands::Base
       match(/^(?<bot>[[:alnum:][:punct:]@<>]*)\s+(?<expression>.+)/)

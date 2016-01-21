@@ -1,4 +1,4 @@
-module SlackMetabot
+module SlackApiExplorer
   class Server < SlackRubyBot::Server
     attr_accessor :team
 
@@ -15,7 +15,7 @@ module SlackMetabot
       # it would keep retrying without checking for account_inactive or such, we want to restart via service which will disable an inactive team
       EM.next_tick do
         logger.info "#{team.name}: socket closed, restarting ..."
-        SlackMetabot::Service.restart! team, self, wait
+        SlackApiExplorer::Service.restart! team, self, wait
         client.team = team
       end
     end

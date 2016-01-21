@@ -1,14 +1,14 @@
-Slack-Metabot
-=============
+Slack API Explorer
+==================
 
-[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](http://slack-metabot.dblock.org)
+[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](http://api-explorer.playplay.io)
 
 Or roll your own ...
 
-[![Build Status](https://travis-ci.org/dblock/slack-metabot.svg)](https://travis-ci.org/dblock/slack-metabot)
-[![Code Climate](https://codeclimate.com/github/dblock/slack-metabot/badges/gpa.svg)](https://codeclimate.com/github/dblock/slack-metabot)
+[![Build Status](https://travis-ci.org/dblock/slack-api-explorer.svg)](https://travis-ci.org/dblock/slack-api-explorer)
+[![Code Climate](https://codeclimate.com/github/dblock/slack-api-explorer/badges/gpa.svg)](https://codeclimate.com/github/dblock/slack-api-explorer)
 
-A command-line meta bot for Slack.
+An API explorer for Slack.
 
 You can DM the bot.
 
@@ -16,13 +16,13 @@ You can DM the bot.
 
 Or invite it to a channel.
 
-![](public/img/slak.gif)
+![](public/img/channel.gif)
 
 ## Usage
 
 ### Help
 
-Get help with `slak help`.
+Get help with `api help`.
 
 ### Basics
 
@@ -35,7 +35,7 @@ auth test
   "ok": true,
   "url": "https://dblockdotorg.slack.com/",
   "team": "dblock",
-  "user": "slak",
+  "user": "api",
   "team_id": "T04KB5WQH",
   "user_id": "U0HPMN0GY"
 }
@@ -63,7 +63,7 @@ channels list | $..[?(@.is_archived==false)].name
 [
   "demo",
   "general",
-  "slakslak",
+  "apiapi",
 ]
 ```
 
@@ -80,7 +80,7 @@ channels list | $..[?(@.name=="general")].id
 ## Installation
 
 Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot). Note the API token.
-You will be able to invoke metabot by the name you give it in the UI above.
+You will be able to invoke the explorer by the name you give it in the UI above.
 
 Run `SLACK_API_TOKEN=<your API token> foreman start`
 

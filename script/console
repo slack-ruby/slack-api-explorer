@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 # Usage: script/console
-# Starts an IRB console with slack-metabot loaded.
+# Starts an IRB console with slack-api-explorer loaded.
 
-exec bundle exec irb -I . -r "slack-metabot"
+exec bundle exec irb -I . -r "slack-api-explorer"

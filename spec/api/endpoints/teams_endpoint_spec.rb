@@ -28,6 +28,14 @@ describe Api::Endpoints::TeamsEndpoint do
         expect(teams.to_a.first.team_id).to eq active_team.team_id
       end
     end
+    context 'api true/false' do
+      let!(:team_on) { Fabricate(:team, api: true) }
+      let!(:team_off) { Fabricate(:team, api: false) }
+      it 'returns teams with api on only' do
+        teams = client.teams
+        expect(teams.count).to eq 1
+      end
+    end
   end
 
   context 'team' do
@@ -63,7 +71,7 @@ describe Api::Endpoints::TeamsEndpoint do
         ENV.delete('SLACK_CLIENT_SECRET')
       end
       it 'creates a team' do
-        expect(SlackMetabot::Service).to receive(:start!)
+        expect(SlackApiExplorer::Service).to receive(:start!)
         expect do
           team = client.teams._post(code: 'code')
           expect(team.team_id).to eq 'team_id'
