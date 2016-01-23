@@ -1,6 +1,11 @@
 module SlackApiExplorer
   module Commands
     class Help < SlackRubyBot::Commands::Base
+      def self.help_for(expression = nil)
+        @help ||= {}
+        @help[expression] ||= '```' + `slack help #{expression}`.gsub(/^(    )/, '') + '```'
+      end
+
       HELP = <<-EOS
 I am your friendly Api Explorer, here to help.
 
@@ -15,8 +20,11 @@ Commands
 #{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
 ```
         EOS
-      def self.call(client, data, _match)
-        client.say(channel: data.channel, text: [HELP, SlackApiExplorer::INFO].join("\n"))
+
+      def self.call(client, data, match)
+        expression = match['expression'] if match.names.include?('expression')
+        help = expression && expression.length > 0 ? help_for(expression) : HELP
+        client.say(channel: data.channel, text: [help, SlackApiExplorer::INFO].join("\n"))
         client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.team} - #{data.user}"
       end

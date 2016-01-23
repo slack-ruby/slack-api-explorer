@@ -2,12 +2,142 @@
  <head>
   <title>API Explorer for Slack | Help</title>
 </head>
- <body style="text-align: center">
-  <p>
+ <body style="text-align: left; margin: 50px;">
+  <p style="text-align: center">
     <img src='img/icon.png' width="100px" height="100px">
   </p>
   <p>
-    If you have any questions or concerns or complaints about our Privacy Policy or our data collection or processing practices, or if you want to report any security violations to us, please <a href="https://twitter.com/dblockdotorg">message @dblockdotorg on Twitter</a> or e-mail <b>dblock[at]dblock[dot]org</b>.
+    <h3>Help</h3>
+  </p>
+  <p>
+    Basic auth test, is it working at all?
+    <pre>
+      auth test
+
+      {
+        "ok": true,
+        "url": "https://dblockdotorg.slack.com/",
+        "team": "dblock",
+        "user": "api",
+        "team_id": "T04KB5WQH",
+        "user_id": "U0HPMN0GY"
+      }
+    </pre>
+  </p>
+  <p>
+    You can pipe a JSON parser, for example find your team ID.
+    <pre>
+      auth test | $.team_id
+
+      [
+        "T04KB5WQH"
+      ]
+    </pre>
+    See <a href='https://github.com/joshbuddy/jsonpath' target='_blank'>jsonpath</a> for detailed syntax.
+  </p>
+  <p>
+    Find out the ID of the <b>#general</b> channel, the easy way.
+    <pre>
+      channels id --channel=#general
+
+      {
+        "ok": true,
+        "channel": {
+          "id": "C04KB5X4D"
+        }
+      }
+    </pre>
+    Or the hard way.
+    <pre>
+      channels list | $..[?(@.name=="general")].id
+
+      [
+        "C04KB5X4D"
+      ]
+    </pre>
+  </p>
+  <p>
+    Post a message into the <b>#general</b> channel.
+    <pre>
+      chat postMessage --as_user=true --text=Hello World --channel=#general
+
+      {
+        "ok": true,
+        "channel": "C04KB5X4D",
+        "ts": "1453587435.000047",
+        "message": {
+          "type": "message",
+          "user": "U07518DTL",
+          "text": "Hello",
+          "ts": "1453587435.000047"
+        }
+      }
+    </pre>
+  </p>
+  <p>
+    Get names of all unarchived channels.
+    <pre>
+      channels list | $..[?(@.is_archived==false)].name
+
+      [
+        "demo",
+        "general",
+        "apiapi",
+      ]
+    </pre>
+  </p>
+  <p>
+    Get help.
+    <pre>
+      help
+
+      Commands
+      --------
+
+      api        - Api methods.
+      auth       - Auth methods.
+      channels   - Get info on your team's Slack channels, create or archive channels, invite users, set the topic and purpose, and mark a channel as read.
+      chat       - Post chat messages to Slack.
+      dnd        - Adjust and view Do Not Disturb settings for team members
+      emoji      - Emoji methods.
+      files      - Get info on files uploaded to Slack, upload new files to Slack.
+      groups     - Get info on your team's private channels.
+      help       - Shows a list of commands or help for one command
+      im         - Get info on your direct messages.
+      mpim       - Get info on your multiparty direct messages.
+      oauth      - Oauth methods.
+      pins       - Pins methods.
+      reactions  - Reactions methods.
+      rtm        - Rtm methods.
+      search     - Search your team's files and messages.
+      stars      - Stars methods.
+      team       - Team methods.
+      usergroups - Get info on your team's user groups.
+      users      - Get info on members of your Slack team.
+    </pre>
+    Get help for a specific command.
+    <pre>
+      help chat
+
+      NAME
+
+      chat - Post chat messages to Slack.
+
+      SYNOPSIS
+
+      slack [global options] chat delete
+      slack [global options] chat postMessage [--as_user arg] [--icon_emoji arg] [--icon_url arg] [--unfurl_links arg] [--unfurl_media arg] [--username arg]
+      slack [global options] chat update [--attachments arg] [--channel arg] [--link_names arg] [--parse arg] [--text arg] [--ts arg]
+
+      COMMANDS
+
+      delete      - This method deletes a message from a channel.
+      postMessage - This method posts a message to a public channel, private group, or IM channel.
+      update      - This method updates a message in a channel.
+    </pre>
+  </p>
+  <p>
+    If you have any questions or concerns, please <a href="https://twitter.com/dblockdotorg">message @dblockdotorg on Twitter</a> or e-mail <b>dblock[at]dblock[dot]org</b>.
   </p>
  </body>
 </html>

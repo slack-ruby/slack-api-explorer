@@ -67,7 +67,20 @@ channels list | $..[?(@.is_archived==false)].name
 ]
 ```
 
-Find out the ID of the _#general_ channel.
+Find out the ID of the _#general_ channel, the easy way.
+
+```
+channels id --channel=#general
+
+{
+  "ok": true,
+  "channel": {
+    "id": "C04KB5X4D"
+  }
+}
+```
+
+Find out the ID of the _#general_ channel, the hard way.
 
 ```
 channels list | $..[?(@.name=="general")].id
