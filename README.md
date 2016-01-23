@@ -18,6 +18,10 @@ Or invite it to a channel.
 
 ![](public/img/channel.gif)
 
+Post a message into a channel.
+
+![](public/img/post.gif)
+
 ## Usage
 
 ### Help
@@ -88,6 +92,24 @@ channels list | $..[?(@.name=="general")].id
 [
   "C04KB5X4D"
 ]
+```
+
+Post a message into the _#general_ channel.
+
+```
+chat postMessage --as_user=true --text="Hello World" --channel=#general
+
+{
+  "ok": true,
+  "channel": "C034LSACD",
+  "ts": "1453588359.000006",
+  "message": {
+    "type": "message",
+    "user": "U0K28DFCY",
+    "text": "Hello World",
+    "ts": "1453588359.000006"
+  }
+}
 ```
 
 ## Installation
