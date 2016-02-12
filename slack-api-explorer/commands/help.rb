@@ -26,7 +26,7 @@ Commands
         help = expression && expression.length > 0 ? help_for(expression) : HELP
         client.say(channel: data.channel, text: [help, SlackApiExplorer::INFO].join("\n"))
         client.say(channel: data.channel, gif: 'help')
-        logger.info "HELP: #{client.team} - #{data.user}"
+        logger.info "HELP: #{client.owner} - #{data.user}"
       end
     end
   end
