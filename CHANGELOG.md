@@ -1,5 +1,11 @@
 ### Changelog
 
+### 2/11/2016
+
+* Implemented an OOB GC - [@dblock](https://github.com/dblock).
+* Swapped Puma for Unicorn - [@dblock](https://github.com/dblock).
+* Fix: wait for the EventMachine reactor to start - [@dblock](https://github.com/dblock).
+
 ### 1/21/2016
 
 * Rebranded as Slack API Explorer - [@dblock](https://github.com/dblock).
