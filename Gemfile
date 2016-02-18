@@ -17,7 +17,6 @@ gem 'newrelic_rpm'
 gem 'newrelic-slack-ruby-bot'
 gem 'rack-rewrite'
 gem 'jsonpath'
-gem 'gctools', require: 'gctools/oobgc'
 
 group :development, :test do
   gem 'rake', '~> 10.4'
