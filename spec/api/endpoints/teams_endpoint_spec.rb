@@ -81,6 +81,7 @@ describe Api::Endpoints::TeamsEndpoint do
         end.to change(Team, :count).by(1)
       end
       it 'reactivates a deactivated team' do
+        expect(SlackApiExplorer::Service).to receive(:start!)
         existing_team = Fabricate(:team, token: 'token', active: false)
         expect do
           team = client.teams._post(code: 'code')
@@ -100,6 +101,7 @@ describe Api::Endpoints::TeamsEndpoint do
         end
       end
       it 'reactivates a deactivated team with a different code' do
+        expect(SlackApiExplorer::Service).to receive(:start!)
         existing_team = Fabricate(:team, token: 'old', team_id: 'team_id', active: false)
         expect do
           team = client.teams._post(code: 'code')

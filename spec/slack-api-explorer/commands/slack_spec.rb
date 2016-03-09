@@ -3,6 +3,9 @@ require 'spec_helper'
 describe SlackApiExplorer::Commands::Slack do
   let!(:team) { Fabricate(:team) }
   let(:app) { SlackApiExplorer::Server.new(team: team) }
+  before do
+    allow(EM).to receive(:defer).and_yield
+  end
   it 'auth' do
     expect(message: "#{SlackRubyBot.config.user} auth").to respond_with_slack_message("```\nerror: Command 'auth' requires a subcommand test```")
   end
