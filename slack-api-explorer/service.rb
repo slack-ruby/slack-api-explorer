@@ -34,14 +34,13 @@ module SlackApiExplorer
       end
 
       def start_from_database!
-        until EM.reactor_running?; end
-        sleep 1
         Team.active.each do |team|
           start!(team)
         end
       end
 
       def restart!(team, server, wait = 1)
+        until EM.reactor_running?; end
         server.start_async
       rescue StandardError => e
         case e.message
