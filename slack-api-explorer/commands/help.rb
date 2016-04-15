@@ -18,6 +18,7 @@ help       - get this helpful message
 Commands
 --------
 #{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
+Most commands contain subcommands, try "help <command>" (eg. "help api") to get a list of subcommands.
 ```
         EOS
 

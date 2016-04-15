@@ -3,6 +3,7 @@ require 'spec_helper'
 describe SlackApiExplorer::Commands::Slack do
   let!(:team) { Fabricate(:team) }
   let(:app) { SlackApiExplorer::Server.new(team: team) }
+  let(:client) { app.send(:client) }
   before do
     allow(EM).to receive(:defer).and_yield
   end
@@ -77,6 +78,14 @@ describe SlackApiExplorer::Commands::Slack do
     end
     it 'returns id of the general channel' do
       expect(message: "#{SlackRubyBot.config.user} channels list | $..[?(@.name=='general')].id").to respond_with_slack_message("```\n[\n  \"C09C5GYHF\"\n]```")
+    end
+  end
+  context 'chat postMessage' do
+    it 'unescapes channel' do
+      expect(SlackApiExplorer::Commands::Slack).to receive(:execute).with(client,
+                                                                          ['chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D']
+                                                                         ).and_yield(JSON.dump(ok: true), nil)
+      expect(message: "#{SlackRubyBot.config.user} chat postMessage --text 'Hello World' --channel <#C04KB5X4D>").to respond_with_slack_message("```\n{\n  \"ok\": true\n}```")
     end
   end
 end

@@ -7,6 +7,7 @@ module SlackApiExplorer
 
       def self.call(client, data, match)
         expression = match['expression']
+        expression = ::Slack::Messages::Formatting.unescape(expression)
         expression.gsub! '—', '--'
         logger.info "SLACK: #{client.owner} - #{expression}"
         args, pipe = Shellwords.parse(expression)
