@@ -1,5 +1,11 @@
 $LOAD_PATH.unshift(File.dirname(__FILE__))
 
+ENV['RACK_ENV'] ||= 'development'
+
+require 'bundler/setup'
+Bundler.require :default, ENV['RACK_ENV']
+
+require 'slack-ruby-bot-server'
 require 'slack-api-explorer'
 
 if ENV['RACK_ENV'] == 'development'
@@ -15,12 +21,7 @@ SlackApiExplorer::App.instance.prepare!
 Thread.abort_on_exception = true
 
 Thread.new do
-  EM.run do
-    Thread.pass until EM.reactor_running?
-    EM.next_tick do
-      SlackApiExplorer::Service.start_from_database!
-    end
-  end
+  SlackApiExplorer::Service.instance.start_from_database!
 end
 
 run Api::Middleware.instance

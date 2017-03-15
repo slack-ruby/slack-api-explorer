@@ -4,11 +4,9 @@ describe SlackApiExplorer::Commands::Slack do
   let!(:team) { Fabricate(:team) }
   let(:app) { SlackApiExplorer::Server.new(team: team) }
   let(:client) { app.send(:client) }
-  before do
-    allow(EM).to receive(:defer).and_yield
-  end
+  let(:message_hook) { SlackRubyBot::Hooks::Message.new }
   it 'auth' do
-    expect(message: "#{SlackRubyBot.config.user} auth").to respond_with_slack_message("```\nerror: Command 'auth' requires a subcommand test```")
+    expect(message: "#{SlackRubyBot.config.user} auth").to respond_with_slack_message("```\nerror: Command 'auth' requires a subcommand revoke,test```")
   end
   context 'auth test' do
     let(:json) do
@@ -83,8 +81,7 @@ describe SlackApiExplorer::Commands::Slack do
   context 'chat postMessage' do
     it 'unescapes channel' do
       expect(SlackApiExplorer::Commands::Slack).to receive(:execute).with(client,
-                                                                          ['chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D']
-                                                                         ).and_yield(JSON.dump(ok: true), nil)
+                                                                          ['chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D']).and_yield(JSON.dump(ok: true), nil)
       expect(message: "#{SlackRubyBot.config.user} chat postMessage --text 'Hello World' --channel <#C04KB5X4D>").to respond_with_slack_message("```\n{\n  \"ok\": true\n}```")
     end
   end

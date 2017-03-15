@@ -13,8 +13,6 @@ module Api
       property :active_teams_count
       property :ping
 
-      private
-
       def ping
         team = Team.asc(:_id).where(api: true).first
         return unless team

@@ -5,7 +5,8 @@ module Api
         -> { [404, {}, []] },
         urls: ['/', '/img', '/scripts'],
         root: File.expand_path('../../../public', __FILE__),
-        index: 'index.html')
+        index: 'index.html'
+      )
     end
 
     def self.logger
