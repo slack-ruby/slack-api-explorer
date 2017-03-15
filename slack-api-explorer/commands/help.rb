@@ -6,7 +6,7 @@ module SlackApiExplorer
         @help[expression] ||= '```' + `slack help #{expression}`.gsub(/^(    )/, '') + '```'
       end
 
-      HELP = <<-EOS
+      HELP = <<-EOS.freeze
 I am your friendly Api Explorer, here to help.
 
 ```
@@ -24,7 +24,7 @@ Most commands contain subcommands, try "help <command>" (eg. "help api") to get 
 
       def self.call(client, data, match)
         expression = match['expression'] if match.names.include?('expression')
-        help = expression && expression.length > 0 ? help_for(expression) : HELP
+        help = expression && !expression.empty? ? help_for(expression) : HELP
         client.say(channel: data.channel, text: [help, SlackApiExplorer::INFO].join("\n"))
         client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.owner} - #{data.user}"

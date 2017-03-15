@@ -1,5 +1,5 @@
 module SlackApiExplorer
-  INFO = <<-EOS
+  INFO = <<-EOS.freeze
 Api Explorer #{SlackApiExplorer::VERSION}
 
 © Daniel Doubrovkine & Contributors, MIT License
