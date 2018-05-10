@@ -6,20 +6,20 @@ module SlackApiExplorer
         @help[expression] ||= '```' + `slack help #{expression}`.gsub(/^(    )/, '') + '```'
       end
 
-      HELP = <<-EOS.freeze
-I am your friendly Api Explorer, here to help.
+      HELP = <<~EOS.freeze
+        I am your friendly Api Explorer, here to help.
 
-```
-General
--------
+        ```
+        General
+        -------
 
-help       - get this helpful message
+        help       - get this helpful message
 
-Commands
---------
-#{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
-Most commands contain subcommands, try "help <command>" (eg. "help api") to get a list of subcommands.
-```
+        Commands
+        --------
+        #{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
+        Most commands contain subcommands, try "help <command>" (eg. "help api") to get a list of subcommands.
+        ```
         EOS
 
       def self.call(client, data, match)
