@@ -6,6 +6,6 @@ module SlackApiExplorer
     https://twitter.com/dblockdotorg
 
     Free Service at http://slack-api-explorer.playplay.io
-    Open-Source at https://github.com/dblock/slack-api-explorer
+    Open-Source at https://github.com/slack-ruby/slack-api-explorer
   EOS
 end
