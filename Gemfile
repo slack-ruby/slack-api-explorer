@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 ruby '2.3.1'
 
 gem 'giphy'
-gem 'jsonpath'
+gem 'jsonpath', '~> 0.5.8'
 gem 'kaminari-grape'
 gem 'mongoid'
 gem 'mongoid-scroll'
@@ -26,12 +26,14 @@ group :development do
 end
 
 group :test do
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'fabrication'
   gem 'faker'
   gem 'hyperclient'
   gem 'rack-test'
   gem 'rspec'
+  gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
 end
