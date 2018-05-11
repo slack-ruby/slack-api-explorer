@@ -59,7 +59,7 @@ module Api
             )
           end
 
-          SlackApiExplorer::Service.start!(team)
+          SlackApiExplorer::Service.instance.start!(team)
           present team, with: Api::Presenters::TeamPresenter
         end
       end
