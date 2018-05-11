@@ -4,7 +4,7 @@
 
 ## Deploy Your Own Slack API Explorer
 
-[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/dblock/slack-api-explorer)
+[![Deploy to Heroku](https://www.herokucdn.com/deploy/button.png)](https://heroku.com/deploy?template=https://github.com/slack-ruby/slack-api-explorer)
 
 ### MongoDB
 

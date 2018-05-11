@@ -1,7 +1,7 @@
 {
 	"name": "Slack API Explorer",
 	"description": "A slack command-line client in Slack.",
-	"respository": "https://github.com/dblock/slack-api-explorer",
+	"respository": "https://github.com/slack-ruby/slack-api-explorer",
 	"keywords": ["slack", "command-line", "client"],
 	"addons": [
 		"mongolab"

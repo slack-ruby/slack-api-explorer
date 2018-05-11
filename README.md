@@ -1,12 +1,11 @@
 Slack API Explorer
 ==================
 
-[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack@2x.png)](http://api-explorer.playplay.io)
+[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](http://api-explorer.playplay.io)
 
 Or roll your own ...
 
-[![Build Status](https://travis-ci.org/dblock/slack-api-explorer.svg)](https://travis-ci.org/dblock/slack-api-explorer)
-[![Code Climate](https://codeclimate.com/github/dblock/slack-api-explorer/badges/gpa.svg)](https://codeclimate.com/github/dblock/slack-api-explorer)
+[![Build Status](https://travis-ci.org/slack-ruby/slack-api-explorer.svg)](https://travis-ci.org/slack-ruby/slack-api-explorer)
 
 An API explorer for Slack.
 
@@ -129,6 +128,6 @@ This bot is built with [slack-ruby-bot](https://github.com/dblock/slack-ruby-bot
 
 ## Copyright and License
 
-Copyright (c) 2016, Daniel Doubrovkine, Artsy and [Contributors](CHANGELOG.md).
+Copyright (c) 2016-2018, Daniel Doubrovkine, Artsy and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).
