@@ -4,7 +4,7 @@ source 'http://rubygems.org'
 ruby '2.3.1'
 
 gem 'giphy'
-gem 'jsonpath', '~> 0.5.8'
+gem 'jsonpath'
 gem 'kaminari-grape'
 gem 'mongoid'
 gem 'mongoid-scroll'
