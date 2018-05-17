@@ -110,8 +110,9 @@ GEM
     i18n (1.0.1)
       concurrent-ruby (~> 1.0)
     ice_nine (0.11.2)
-    jsonpath (0.5.8)
+    jsonpath (0.9.0)
       multi_json
+      to_regexp (~> 0.2.1)
     kaminari-core (1.1.1)
     kaminari-grape (1.0.1)
       grape
@@ -190,7 +191,7 @@ GEM
       diff-lcs (>= 1.2.0, < 2.0)
       rspec-support (~> 3.7.0)
     rspec-support (3.7.1)
-    rubocop (0.55.0)
+    rubocop (0.56.0)
       parallel (~> 1.10)
       parser (>= 2.5)
       powerpack (~> 0.1)
@@ -229,6 +230,7 @@ GEM
     thread_safe (0.3.6)
     timers (4.1.2)
       hitimes
+    to_regexp (0.2.1)
     tzinfo (1.2.5)
       thread_safe (~> 0.1)
     uber (0.1.0)
@@ -264,7 +266,7 @@ DEPENDENCIES
   foreman
   giphy
   hyperclient
-  jsonpath (~> 0.5.8)
+  jsonpath
   kaminari-grape
   mongoid
   mongoid-scroll
