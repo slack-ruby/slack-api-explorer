@@ -8,7 +8,7 @@ module SlackApiExplorer
     end
 
     def after_start!
-      every 60 * 60 do
+      every 60 * 3 do
         ping_teams!
       end
     end
