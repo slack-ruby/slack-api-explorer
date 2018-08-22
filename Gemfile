@@ -1,10 +1,9 @@
-
 source 'http://rubygems.org'
 
 ruby '2.3.1'
 
 gem 'giphy'
-gem 'jsonpath'
+gem 'jsonpath', '0.9.0'
 gem 'kaminari-grape'
 gem 'mongoid'
 gem 'mongoid-scroll'

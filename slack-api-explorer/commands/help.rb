@@ -20,7 +20,7 @@ module SlackApiExplorer
         #{`slack help`.gsub(/.*?(COMMANDS)/m, '').gsub(/^(    )/, '')}
         Most commands contain subcommands, try "help <command>" (eg. "help api") to get a list of subcommands.
         ```
-        EOS
+      EOS
 
       def self.call(client, data, match)
         expression = match['expression'] if match.names.include?('expression')
