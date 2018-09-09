@@ -1,7 +1,5 @@
 module SlackApiExplorer
   class App < SlackRubyBotServer::App
-    include Celluloid
-
     def prepare!
       super
       purge_inactive_teams!
