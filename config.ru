@@ -14,7 +14,6 @@ Thread.abort_on_exception = true
 
 Thread.new do
   SlackApiExplorer::Service.instance.start_from_database!
-  SlackApiExplorer::App.instance.after_start!
 end
 
 run Api::Middleware.instance
