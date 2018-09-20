@@ -16,6 +16,7 @@ module Api
       def ping
         team = Team.asc(:_id).where(api: true).first
         return unless team
+
         team.ping!
       end
 
