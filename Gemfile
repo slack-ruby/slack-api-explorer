@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.3.1'
+ruby '2.5.1'
 
 gem 'giphy'
 gem 'jsonpath', '0.9.0'
