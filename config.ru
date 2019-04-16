@@ -13,7 +13,7 @@ SlackApiExplorer::App.instance.prepare!
 Thread.abort_on_exception = true
 
 Thread.new do
-  SlackApiExplorer::Service.instance.start_from_database!
+  SlackRubyBotServer::Service.instance.start_from_database!
 end
 
 run Api::Middleware.instance

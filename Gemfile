@@ -13,6 +13,7 @@ gem 'newrelic_rpm'
 gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server'
+gem 'slack-ruby-bot-server-mailchimp'
 gem 'unicorn'
 
 group :development, :test do
