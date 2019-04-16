@@ -1,8 +1,9 @@
 source 'http://rubygems.org'
 
-ruby '2.5.3'
+ruby '2.6.2'
 
 gem 'giphy'
+gem 'irb'
 gem 'jsonpath', '0.9.0'
 gem 'kaminari-grape'
 gem 'mongoid'
@@ -12,6 +13,7 @@ gem 'newrelic_rpm'
 gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server'
+gem 'unicorn'
 
 group :development, :test do
   gem 'foreman'
