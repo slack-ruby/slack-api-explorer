@@ -128,6 +128,6 @@ This bot is built with [slack-ruby-bot](https://github.com/dblock/slack-ruby-bot
 
 ## Copyright and License
 
-Copyright (c) 2016-2018, Daniel Doubrovkine, Artsy and [Contributors](CHANGELOG.md).
+Copyright (c) 2016-2019, Daniel Doubrovkine, Vestris LLC, Artsy and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).
