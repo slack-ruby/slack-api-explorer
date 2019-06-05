@@ -53,6 +53,7 @@ module Api
 
           if team
             team.update_attributes!(
+              token: token,
               activated_user_id: user_id,
               activated_user_access_token: access_token,
               bot_user_id: bot_user_id
