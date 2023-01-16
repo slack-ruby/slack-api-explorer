@@ -1,6 +1,6 @@
 source 'http://rubygems.org'
 
-ruby '2.6.2'
+ruby '2.7.7'
 
 gem 'giphy'
 gem 'irb'
@@ -19,7 +19,7 @@ gem 'unicorn'
 group :development, :test do
   gem 'foreman'
   gem 'rake'
-  gem 'rubocop'
+  gem 'rubocop', '0.76.0'
 end
 
 group :development do
