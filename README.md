@@ -5,7 +5,7 @@ Slack API Explorer
 
 Or roll your own ...
 
-[![Build Status](https://travis-ci.org/slack-ruby/slack-api-explorer.svg)](https://travis-ci.org/slack-ruby/slack-api-explorer)
+[![test](https://github.com/slack-ruby/slack-api-explorer/actions/workflows/test.yml/badge.svg)](https://github.com/slack-ruby/slack-api-explorer/actions/workflows/test.yml)
 
 An API explorer for Slack.
 
