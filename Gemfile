@@ -10,10 +10,12 @@ gem 'mongoid'
 gem 'mongoid-scroll'
 gem 'newrelic-slack-ruby-bot'
 gem 'newrelic_rpm'
+gem 'rack', '~> 2.2'
 gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server'
 gem 'slack-ruby-bot-server-mailchimp'
+gem 'slack-ruby-bot-server-rtm'
 gem 'unicorn'
 
 group :development, :test do
@@ -28,10 +30,10 @@ end
 
 group :test do
   gem 'capybara'
-  gem 'database_cleaner'
+  gem 'database_cleaner', '~> 1.8.4'
   gem 'fabrication'
   gem 'faker'
-  gem 'hyperclient'
+  gem 'hyperclient', '~> 0.9'
   gem 'rack-test'
   gem 'rspec'
   gem 'selenium-webdriver'
