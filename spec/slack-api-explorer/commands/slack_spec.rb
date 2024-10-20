@@ -5,9 +5,11 @@ describe SlackApiExplorer::Commands::Slack do
   let(:app) { SlackApiExplorer::Server.new(team: team) }
   let(:client) { app.send(:client) }
   let(:message_hook) { SlackRubyBot::Hooks::Message.new }
+
   it 'auth' do
     expect(message: "#{SlackRubyBot.config.user} auth").to respond_with_slack_message("```\nerror: Command 'auth' requires a subcommand revoke,test```")
   end
+
   context 'auth test' do
     let(:json) do
       {
@@ -19,19 +21,24 @@ describe SlackApiExplorer::Commands::Slack do
         user_id: 'U07518DTL'
       }
     end
+
     before do
-      allow(SlackApiExplorer::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(described_class).to receive(:execute).and_yield(JSON.dump(json), nil)
     end
+
     it 'returns raw json' do
       expect(message: "#{SlackRubyBot.config.user} auth test").to respond_with_slack_message("```\n#{JSON.pretty_generate(json)}```")
     end
+
     it 'processes a json value' do
       expect(message: "#{SlackRubyBot.config.user} auth test | $.team_id").to respond_with_slack_message("```\n[\n  \"T04KB5WQH\"\n]```")
     end
+
     it 'responds to a slack ID' do
       expect(message: "<@#{SlackRubyBot.config.user_id}>: auth test").to respond_with_slack_message("```\n#{JSON.pretty_generate(json)}```")
     end
   end
+
   context 'channels list' do
     let(:json) do
       {
@@ -64,24 +71,30 @@ describe SlackApiExplorer::Commands::Slack do
         ]
       }
     end
+
     before do
-      allow(SlackApiExplorer::Commands::Slack).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(described_class).to receive(:execute).and_yield(JSON.dump(json), nil)
     end
+
     it 'returns multiple json values' do
       expect(message: "#{SlackRubyBot.config.user} channels list | $..name").to respond_with_slack_message("```\n[\n  \"general\",\n  \"random\"\n]```")
     end
+
     it 'returns general channel' do
       output = JSON.pretty_generate([json[:channels][0]])
       expect(message: "#{SlackRubyBot.config.user} channels list | $..[?(@.name=='general')]").to respond_with_slack_message("```\n#{output}```")
     end
+
     it 'returns id of the general channel' do
       expect(message: "#{SlackRubyBot.config.user} channels list | $..[?(@.name=='general')].id").to respond_with_slack_message("```\n[\n  \"C09C5GYHF\"\n]```")
     end
   end
+
   context 'chat postMessage' do
     it 'unescapes channel' do
-      expect(SlackApiExplorer::Commands::Slack).to receive(:execute).with(client,
-                                                                          ['chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D']).and_yield(JSON.dump(ok: true), nil)
+      expect(described_class).to receive(:execute).with(client,
+                                                        ['chat', 'postMessage', '--text',
+                                                         'Hello World', '--channel', '#C04KB5X4D']).and_yield(JSON.dump(ok: true), nil)
       expect(message: "#{SlackRubyBot.config.user} chat postMessage --text 'Hello World' --channel <#C04KB5X4D>").to respond_with_slack_message("```\n{\n  \"ok\": true\n}```")
     end
   end
