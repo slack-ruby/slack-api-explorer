@@ -1,4 +1,4 @@
-source 'http://rubygems.org'
+source 'https://rubygems.org'
 
 ruby '3.3.5'
 
@@ -9,6 +9,7 @@ gem 'mongoid'
 gem 'mongoid-scroll'
 gem 'newrelic_rpm'
 gem 'newrelic-slack-ruby-bot'
+gem 'ostruct'
 gem 'rack'
 gem 'rack-robotz'
 gem 'rack-server-pages'

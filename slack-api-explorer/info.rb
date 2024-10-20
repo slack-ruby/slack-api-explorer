@@ -5,7 +5,7 @@ module SlackApiExplorer
     © Daniel Doubrovkine, Vestris LLC & Contributors, MIT License
     https://www.vestris.com
 
-    Free Service at http://slack-api-explorer.playplay.io
+    Free Service at https://api-explorer.playplay.io
     Open-Source at https://github.com/slack-ruby/slack-api-explorer
   EOS
 end

@@ -1,7 +1,7 @@
 Slack API Explorer
 ==================
 
-[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](http://api-explorer.playplay.io)
+[![Add to Slack](https://platform.slack-edge.com/img/add_to_slack.png)](https://api-explorer.playplay.io)
 
 Or roll your own ...
 
@@ -111,23 +111,12 @@ chat postMessage --as_user=true --text="Hello World" --channel=#general
 }
 ```
 
-## Installation
-
-Create a new Bot Integration under [services/new/bot](http://slack.com/services/new/bot). Note the API token.
-You will be able to invoke the explorer by the name you give it in the UI above.
-
-Run `SLACK_API_TOKEN=<your API token> foreman start`
-
-## Production Deployment
-
-See [DEPLOYMENT](DEPLOYMENT.md)
-
 ## Contributing
 
 This bot is built with [slack-ruby-bot](https://github.com/dblock/slack-ruby-bot). See [CONTRIBUTING](CONTRIBUTING.md).
 
 ## Copyright and License
 
-Copyright (c) 2016-2019, Daniel Doubrovkine, Vestris LLC, Artsy and [Contributors](CHANGELOG.md).
+Copyright (c) 2016-2024, Daniel Doubrovkine, Vestris LLC, Artsy and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).

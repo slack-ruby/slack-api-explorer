@@ -1,5 +1,5 @@
 GEM
-  remote: http://rubygems.org/
+  remote: https://rubygems.org/
   specs:
     activemodel (7.2.1.1)
       activesupport (= 7.2.1.1)
@@ -179,6 +179,7 @@ GEM
     nokogiri (1.16.7)
       mini_portile2 (~> 2.8.2)
       racc (~> 1.4)
+    ostruct (0.6.0)
     parallel (1.26.3)
     parser (3.3.5.0)
       ast (~> 2.4.1)
@@ -334,6 +335,7 @@ DEPENDENCIES
   mongoid-shell
   newrelic-slack-ruby-bot
   newrelic_rpm
+  ostruct
   rack
   rack-robotz
   rack-server-pages
