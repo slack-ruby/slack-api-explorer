@@ -23,7 +23,7 @@ describe SlackApiExplorer::Commands::Slack do
     end
 
     before do
-      allow(described_class).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(Open3).to receive(:capture3).and_return(JSON.dump(json), nil)
     end
 
     it 'returns raw json' do
@@ -73,7 +73,7 @@ describe SlackApiExplorer::Commands::Slack do
     end
 
     before do
-      allow(described_class).to receive(:execute).and_yield(JSON.dump(json), nil)
+      allow(Open3).to receive(:capture3).and_return(JSON.dump(json), nil)
     end
 
     it 'returns multiple json values' do
@@ -92,9 +92,8 @@ describe SlackApiExplorer::Commands::Slack do
 
   context 'chat postMessage' do
     it 'unescapes channel' do
-      expect(described_class).to receive(:execute).with(client,
-                                                        ['chat', 'postMessage', '--text',
-                                                         'Hello World', '--channel', '#C04KB5X4D']).and_yield(JSON.dump(ok: true), nil)
+      allow(Open3).to receive(:capture3).and_return(JSON.dump(ok: true), nil)
+      expect(Open3).to receive(:capture3).with('slack', '--slack-api-token', client.token, 'chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D')
       expect(message: "#{SlackRubyBot.config.user} chat postMessage --text 'Hello World' --channel <#C04KB5X4D>").to respond_with_slack_message("```\n{\n  \"ok\": true\n}```")
     end
   end
