@@ -3,7 +3,9 @@ module SlackApiExplorer
     class Help < SlackRubyBot::Commands::Base
       def self.help_for(expression = nil)
         @help ||= {}
-        @help[expression] ||= '```' + `slack help #{expression}`.gsub(/^(    )/, '') + '```'
+        expression = Shellwords.join(['slack', 'help', Shellwords.parse(expression).compact].flatten)
+        result, _ = Open3.capture2e(expression)
+        @help[expression] ||= "```\n" + result.gsub(/^(    )/, '').strip + "\n```"
       end
 
       def self.commands
@@ -46,9 +48,12 @@ module SlackApiExplorer
 
       def self.call(client, data, match)
         expression = match['expression'] if match.names.include?('expression')
-        help = expression && !expression.empty? ? help_for(expression) : HELP
-        client.say(channel: data.channel, text: [help, SlackApiExplorer::INFO].join("\n"))
-        logger.info "HELP: #{client.owner} - #{data.user}"
+        if expression && !expression.empty?
+          client.say(channel: data.channel, text: help_for(expression))
+        else
+          client.say(channel: data.channel, text: [HELP, INFO].join("\n"))
+        end
+        logger.info "HELP: #{client.owner}, user=#{data.user}, for=#{expression || 'help'}"
       end
     end
   end

@@ -93,7 +93,14 @@ describe SlackApiExplorer::Commands::Slack do
   context 'chat postMessage' do
     it 'unescapes channel' do
       allow(Open3).to receive(:capture3).and_return(JSON.dump(ok: true), nil)
-      expect(Open3).to receive(:capture3).with('slack', '--slack-api-token', client.token, 'chat', 'postMessage', '--text', 'Hello World', '--channel', '#C04KB5X4D')
+      expect(Open3).to receive(:capture3).with(
+        Shellwords.join(
+          [
+            'slack', '--slack-api-token', client.token, 'chat', 'postMessage', '--text', 'Hello World', '--channel',
+            '#C04KB5X4D'
+          ]
+        )
+      )
       expect(message: "#{SlackRubyBot.config.user} chat postMessage --text 'Hello World' --channel <#C04KB5X4D>").to respond_with_slack_message("```\n{\n  \"ok\": true\n}```")
     end
   end

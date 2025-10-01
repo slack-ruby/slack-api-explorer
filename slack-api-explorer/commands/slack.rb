@@ -9,9 +9,10 @@ module SlackApiExplorer
         expression = match['expression']
         expression = ::Slack::Messages::Formatting.unescape(expression)
         expression.gsub! '—', '--'
-        logger.info "SLACK: #{client.owner} - #{expression}"
+        logger.info "SLACK: #{client.owner}, cmd=#{expression}"
         args, pipe = Shellwords.parse(expression)
-        output, error, _ = Open3.capture3(* ['slack', '--slack-api-token', client.owner.token, args].flatten)
+        cmd = Shellwords.shelljoin(['slack', '--slack-api-token', client.owner.token, args].flatten)
+        output, error, _ = Open3.capture3(cmd)
         error&.strip!
         output&.strip!
         if error && !error.blank?
