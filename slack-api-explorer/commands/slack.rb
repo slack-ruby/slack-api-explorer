@@ -31,7 +31,7 @@ module SlackApiExplorer
           client.owner.token,
           args
         ].flatten) do |_, stdout, stderr, _|
-          yield stdout.gets.try(:strip), stderr.gets.try(:strip)
+          yield stdout.read.try(:strip), stderr.gets.try(:strip)
         end
       end
     end
