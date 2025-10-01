@@ -189,6 +189,7 @@ GEM
       newrelic_rpm
       slack-ruby-bot (>= 0.10.5)
     newrelic_rpm (9.21.0)
+    nio4r (2.7.4)
     nokogiri (1.18.10-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-musl)
@@ -218,6 +219,8 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
+    puma (7.0.4)
+      nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.1)
     rack-cors (3.0.0)
@@ -348,7 +351,6 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
-    webrick (1.9.1)
     websocket (1.2.11)
     websocket-driver (0.7.7)
       base64
@@ -385,6 +387,7 @@ DEPENDENCIES
   newrelic-slack-ruby-bot
   newrelic_rpm
   ostruct
+  puma
   rack
   rack-robotz
   rack-server-pages
@@ -401,7 +404,6 @@ DEPENDENCIES
   slack-ruby-bot-server-rtm
   vcr
   webmock
-  webrick
 
 RUBY VERSION
    ruby 3.4.6p54

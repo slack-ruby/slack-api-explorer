@@ -10,12 +10,12 @@ gem 'mongoid-scroll'
 gem 'newrelic_rpm'
 gem 'newrelic-slack-ruby-bot'
 gem 'ostruct'
+gem 'puma'
 gem 'rack'
 gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server-mailchimp'
 gem 'slack-ruby-bot-server-rtm'
-gem 'webrick'
 
 group :development, :test do
   gem 'foreman'
