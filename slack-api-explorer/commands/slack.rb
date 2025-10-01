@@ -21,7 +21,7 @@ module SlackApiExplorer
           end
         end
       rescue SyntaxError => e
-        client.say(channel: data.channel, text: e.message, gif: 'error')
+        client.say(channel: data.channel, text: e.message)
       end
 
       def self.execute(client, args)
