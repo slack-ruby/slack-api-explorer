@@ -22,14 +22,13 @@ module SlackApiExplorer
         Not sure where to start? Try "auth test", then invite the bot to #general and DM it "chat postMessage --as_user=true --text='Hello World' --channel=#general".
 
         Most commands contain subcommands, try "help <command>" (eg. "help api") to get a list of subcommands.
-        ```
+        ```\n
       EOS
 
       def self.call(client, data, match)
         expression = match['expression'] if match.names.include?('expression')
         help = expression && !expression.empty? ? help_for(expression) : HELP
         client.say(channel: data.channel, text: [help, SlackApiExplorer::INFO].join("\n"))
-        client.say(channel: data.channel, gif: 'help')
         logger.info "HELP: #{client.owner} - #{data.user}"
       end
     end
