@@ -10,12 +10,12 @@ gem 'mongoid-scroll'
 gem 'newrelic_rpm'
 gem 'newrelic-slack-ruby-bot'
 gem 'ostruct'
+gem 'puma'
 gem 'rack'
 gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server-mailchimp'
 gem 'slack-ruby-bot-server-rtm'
-gem 'unicorn'
 
 group :development, :test do
   gem 'foreman'
@@ -43,5 +43,4 @@ group :test do
   gem 'selenium-webdriver'
   gem 'vcr'
   gem 'webmock'
-  gem 'webrick'
 end

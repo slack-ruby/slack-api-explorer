@@ -32,7 +32,7 @@ module SlackApiExplorer
         General
         -------
 
-        help       - get this helpful message
+        help                                      - Get this helpful message.
 
         Commands
         --------
