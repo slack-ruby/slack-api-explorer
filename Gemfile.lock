@@ -146,6 +146,7 @@ GEM
     kaminari-grape (1.0.1)
       grape
       kaminari-core (~> 1.0)
+    kgio (2.11.4)
     language_server-protocol (3.17.0.5)
     lint_roller (1.1.0)
     logger (1.7.0)
@@ -189,7 +190,6 @@ GEM
       newrelic_rpm
       slack-ruby-bot (>= 0.10.5)
     newrelic_rpm (9.21.0)
-    nio4r (2.7.4)
     nokogiri (1.18.10-aarch64-linux-gnu)
       racc (~> 1.4)
     nokogiri (1.18.10-aarch64-linux-musl)
@@ -219,8 +219,6 @@ GEM
       date
       stringio
     public_suffix (6.0.2)
-    puma (7.0.4)
-      nio4r (~> 2.0)
     racc (1.8.1)
     rack (3.2.1)
     rack-cors (3.0.0)
@@ -236,6 +234,7 @@ GEM
     rackup (2.2.1)
       rack (>= 3)
     rainbow (3.1.1)
+    raindrops (0.20.1)
     rake (13.3.0)
     rdoc (6.14.2)
       erb
@@ -344,6 +343,9 @@ GEM
     unicode-display_width (3.2.0)
       unicode-emoji (~> 4.1)
     unicode-emoji (4.1.0)
+    unicorn (6.1.0)
+      kgio (~> 2.6)
+      raindrops (~> 0.7)
     uri (1.0.3)
     vcr (6.3.1)
       base64
@@ -351,6 +353,7 @@ GEM
       addressable (>= 2.8.0)
       crack (>= 0.3.2)
       hashdiff (>= 0.4.0, < 2.0.0)
+    webrick (1.9.1)
     websocket (1.2.11)
     websocket-driver (0.7.7)
       base64
@@ -387,7 +390,6 @@ DEPENDENCIES
   newrelic-slack-ruby-bot
   newrelic_rpm
   ostruct
-  puma
   rack
   rack-robotz
   rack-server-pages
@@ -402,8 +404,10 @@ DEPENDENCIES
   selenium-webdriver
   slack-ruby-bot-server-mailchimp
   slack-ruby-bot-server-rtm
+  unicorn
   vcr
   webmock
+  webrick
 
 RUBY VERSION
    ruby 3.4.6p54
