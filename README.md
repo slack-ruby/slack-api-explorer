@@ -61,24 +61,26 @@ auth test | $.team_id
 Names of all unarchived channels.
 
 ```
-channels list | $..[?(@.is_archived==false)].name
+conversations list | $..[?(@.is_archived==false)].name
 
 [
   "demo",
   "general",
   "apiapi",
+  ...
 ]
 ```
 
 Find out the ID of the _#general_ channel, the easy way.
 
 ```
-channels id --channel=#general
+conversations info --channel=#general
 
 {
   "ok": true,
   "channel": {
-    "id": "C04KB5X4D"
+    "id": "C04KB5X4D",
+    ...
   }
 }
 ```
@@ -86,7 +88,7 @@ channels id --channel=#general
 Find out the ID of the _#general_ channel, the hard way.
 
 ```
-channels list | $..[?(@.name=="general")].id
+conversations list | $..[?(@.name=="general")].id
 
 [
   "C04KB5X4D"
@@ -117,6 +119,6 @@ This bot is built with [slack-ruby-bot](https://github.com/dblock/slack-ruby-bot
 
 ## Copyright and License
 
-Copyright (c) 2016-2024, Daniel Doubrovkine, Vestris LLC, Artsy and [Contributors](CHANGELOG.md).
+Copyright (c) 2016-2025, Daniel Doubrovkine, Vestris LLC, Artsy and [Contributors](CHANGELOG.md).
 
 This project is licensed under the [MIT License](LICENSE.md).
