@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.3.5'
+ruby '3.4.6'
 
 gem 'irb'
 gem 'jsonpath', '0.9.0'
@@ -15,7 +15,7 @@ gem 'rack-robotz'
 gem 'rack-server-pages'
 gem 'slack-ruby-bot-server-mailchimp'
 gem 'slack-ruby-bot-server-rtm'
-gem 'unicorn'
+gem 'webrick'
 
 group :development, :test do
   gem 'foreman'
