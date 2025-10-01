@@ -12,7 +12,7 @@ module SlackApiExplorer
         logger.info "SLACK: #{client.owner} - #{expression}"
         args, pipe = Shellwords.parse(expression)
         execute(client, args) do |output, error|
-          if error
+          if error && !error.blank?
             client.say(channel: data.channel, text: "```\n#{error}```")
           else
             output = pipe ? JsonPath.on(output, pipe) : JSON.parse(output)
@@ -31,7 +31,7 @@ module SlackApiExplorer
           client.owner.token,
           args
         ].flatten) do |_, stdout, stderr, _|
-          yield stdout.read.try(:strip), stderr.gets.try(:strip)
+          yield stdout.read&.strip, stderr.read&.strip
         end
       end
     end
