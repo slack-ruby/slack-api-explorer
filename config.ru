@@ -8,6 +8,8 @@ Bundler.require :default, ENV['RACK_ENV']
 require 'slack-ruby-bot-server'
 require 'slack-api-explorer'
 
+NewRelic::Agent.manual_start
+
 SlackApiExplorer::App.instance.prepare!
 
 Thread.abort_on_exception = true
