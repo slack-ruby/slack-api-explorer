@@ -21,6 +21,10 @@ Post a message into a channel.
 
 ![](public/img/post.gif)
 
+## Website asset caching
+
+Local scripts and images use content-hashed `asset_path` URLs from rack-server-pages 0.3.0. The custom middleware applies slack-ruby-bot-server 2.3.0's `config.server_pages` callback, setting `Cache-Control: private, no-cache` for rendered pages so browsers revalidate and discover changed asset URLs. Static files retain the middleware's content ETags and timestamp validation defaults, without long-lived or immutable caching. Versioned URLs are cache keys, not archives; old query strings still serve current files.
+
 ## Usage
 
 ### Help

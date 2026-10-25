@@ -1,14 +1,14 @@
 <html>
  <head>
   <title>API Explorer for Slack</title>
-  <script src="/scripts/jquery-1.7.1.min.js"></script>
-  <script src="/scripts/url.min.js"></script>
-  <script src="/scripts/register.js"></script>
-  <script src="/scripts/stats.js"></script>
+  <script src="<%= h asset_path('/scripts/jquery-1.7.1.min.js') %>"></script>
+  <script src="<%= h asset_path('/scripts/url.min.js') %>"></script>
+  <script src="<%= h asset_path('/scripts/register.js') %>"></script>
+  <script src="<%= h asset_path('/scripts/stats.js') %>"></script>
 </head>
  <body style="text-align: center">
   <p>
-    <img src='img/icon.png' width="100px" height="100px">
+    <img src="<%= h asset_path('/img/icon.png') %>" width="100px" height="100px">
   </p>
   <p>
     <h3>Whoa, an API explorer for the Slack Web API.</h3>
@@ -19,7 +19,7 @@
   </p>
   <p id='active_teams_count'>&nbsp;</p>
   <p>
-    <img src="img/dm.gif">
+    <img src="<%= h asset_path('/img/dm.gif') %>">
   </p>
   <p>
     <a href="https://twitter.com/share" class="twitter-share-button"{count} data-text="Whoa, an API explorer for the Slack Web API!" data-via="dblockdotorg">Tweet</a>
@@ -43,4 +43,3 @@
   </p>
  </body>
 </html>
-

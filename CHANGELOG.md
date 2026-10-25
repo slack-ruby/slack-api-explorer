@@ -1,5 +1,6 @@
 ### Changelog
 
+* 2026/10/25: Upgrade slack-ruby-bot-server to 2.3.0 and rack-server-pages to 0.3.0, version local website assets, and centrally configure private, revalidating page caching without changing Slack installation or API behavior - [@dblock](https://github.com/dblock), [@Copilot](https://github.com/apps/copilot-swe-agent).
 * 2023/01/16: Replaced Travis-CI with GHA - [@dblock](https://github.com/dblock).
 * 2018/05/10: Use ERB instead of static pages - [@dblock](https://github.com/dblock).
 * 2017/03/14: Use slack-ruby-bot-server - [@dblock](https://github.com/dblock).
