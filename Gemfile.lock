@@ -229,7 +229,7 @@ GEM
     rack-rewrite (1.5.1)
     rack-robotz (0.0.4)
       rack
-    rack-server-pages (0.2.1)
+    rack-server-pages (0.3.0)
       rack
     rack-test (2.2.0)
       rack (>= 1.3)
@@ -305,7 +305,7 @@ GEM
       activesupport
       hashie
       slack-ruby-client (>= 0.14.0)
-    slack-ruby-bot-server (2.2.0)
+    slack-ruby-bot-server (2.3.0)
       async
       foreman
       grape
@@ -390,7 +390,7 @@ DEPENDENCIES
   puma
   rack
   rack-robotz
-  rack-server-pages
+  rack-server-pages (~> 0.3.0)
   rack-test
   rackup
   rake
@@ -400,6 +400,7 @@ DEPENDENCIES
   rubocop-rake
   rubocop-rspec
   selenium-webdriver
+  slack-ruby-bot-server (~> 2.3.0)
   slack-ruby-bot-server-mailchimp
   slack-ruby-bot-server-rtm
   vcr
