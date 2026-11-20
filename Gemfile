@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '3.4.6'
+ruby '4.0.10'
 
 gem 'irb'
 gem 'jsonpath', '0.9.0'
